@@ -1,0 +1,116 @@
+[
+  {
+    "local_url": "http://sm.loc",
+    "remote_url": "https://go.sm.news",
+    "events": [
+      {
+        "onLoad": [
+          {
+            "name": "article_url",
+            "command": "",
+            "args": "",
+            "add_args": "",
+            "attribute": "",
+            "action": "window.location.href",
+            "callback": "",
+            "callback_args": ""
+          },
+          {
+            "name": "article_title",
+            "command": "querySelector",
+            "args": "section.news-content div.row div.col-lg-8.col-md-8 div.content div.top__content h1",
+            "add_args": "[0]",
+            "attribute": "",
+            "action": "innerText",
+            "callback": "",
+            "callback_args": ""
+          },
+          {
+            "name": "article_cover",
+            "command": "querySelector",
+            "args": "section.news-content div.row div.col-lg-8.col-md-8 div.content div.top__content div.news__image_box div.news__image figure picture source",
+            "add_args": "[0]",
+            "attribute": "",
+            "action": "innerHTML",
+            "callback": "",
+            "callback_args": ""
+          },
+          {
+            "name": "article_announcement",
+            "command": "querySelector",
+            "args": "section.news-content div.row div.col-lg-8.col-md-8 div.content div.bottom__content div.news__preview",
+            "add_args": "[0]",
+            "attribute": "",
+            "action": "innerHTML",
+            "callback": "",
+            "callback_args": ""
+          },
+          {
+            "name": "article_tags",
+            "command": "querySelector",
+            "args": ".keywords",
+            "add_args": "[0]",
+            "attribute": "",
+            "action": "innerHTML",
+            "callback": "clearTags()",
+            "callback_args": ""
+          },
+          {
+            "name": "article_symbols_amount",
+            "command": "querySelector",
+            "args": "section.news-content div.row div.col-lg-8.col-md-8 div.content",
+            "add_args": "[0]",
+            "attribute": "",
+            "action": "innerText",
+            "callback": "getArticlesSymbols()",
+            "callback_args": ""
+          },
+          {
+            "name": "article_images_amount",
+            "command": "querySelector",
+            "args": "section.news-content div.row div.col-lg-8.col-md-8 div.content",
+            "add_args": "[0]",
+            "attribute": "",
+            "action": "innerHTML",
+            "callback": "getArticlesImages()",
+            "callback_args": ""
+          },
+          {
+            "name": "article_published",
+            "command": "querySelector",
+            "args": "section.news-content div.row div.col-lg-8.col-md-8 div.content div.top__content time.date",
+            "add_args": "[0]",
+            "attribute": "",
+            "action": "innerHTML",
+            "callback": "getCorrectPublished()",
+            "callback_args": ""
+          }
+        ],
+        "onScroll": [
+          {
+            "name": "article_read_time",
+            "command": "querySelector",
+            "args": "section.news-content div.row div.col-lg-8.col-md-8 div.content",
+            "add_args": "",
+            "attribute": "",
+            "action": "",
+            "callback": "getInfoOnScroll",
+            "callback_args": ""
+          }
+        ],
+        "onClick": [
+          {
+            "name": "article_clicked",
+            "command": "querySelector",
+            "args": "body",
+            "add_args": "",
+            "attribute": "",
+            "action": "",
+            "callback": "getInfoOnClicked",
+            "callback_args": ""
+          }
+        ]
+      }
+    ]
+  }
+]
